@@ -1,5 +1,5 @@
 import { ValidationOptions } from "class-validator";
-import createValidator from "src/validation/create-validator";
+import createValidator from "../validation/create-validator";
 import EmailToken from "./email-token";
 
 const IsEmailToken = createValidator<

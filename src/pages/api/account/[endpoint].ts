@@ -1,1 +1,1 @@
-export { default } from "src/server";
+export { apiHandler as default } from "../../../api-handler";

@@ -1,4 +1,4 @@
-import { ContextProps } from "src/context";
+import { ContextProps } from "../context";
 
 const texts = {
   logoutSuccessMessage: "Você saiu da sua conta",

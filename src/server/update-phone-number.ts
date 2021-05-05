@@ -1,8 +1,8 @@
-import parse from "src/validation/parse";
-import api from "src/api";
-import prisma from "src/prisma";
-import Token from "src/auth/token";
-import ValidNewPhoneNumber from "src/user/valid-new-phone-number";
+import parse from "../validation/parse";
+import api from "../api";
+import prisma from "../prisma";
+import Token from "../auth/token";
+import ValidNewPhoneNumber from "../user/valid-new-phone-number";
 
 export default api.updatePhoneNumber(async (data, request) => {
   const [{ phoneNumber, firebaseToken }, errors] = await parse(

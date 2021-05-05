@@ -1,9 +1,9 @@
-import parse from "src/validation/parse";
-import api from "src/api";
-import prisma from "src/prisma";
-import Token from "src/auth/token";
-import { Role } from "src/auth/types";
-import ValidNewUser from "src/user/valid-new-user";
+import parse from "../validation/parse";
+import api from "../api";
+import prisma from "../prisma";
+import Token from "../auth/token";
+import { Role } from "../auth/types";
+import ValidNewUser from "../user/valid-new-user";
 
 export default api.createAccount(async (data) => {
   const [

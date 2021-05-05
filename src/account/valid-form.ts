@@ -1,5 +1,5 @@
 import { IsString } from "class-validator";
-import ValidUser from "src/user/valid-user";
+import ValidUser from "../user/valid-user";
 
 export default class ValidForm extends ValidUser {
   @IsString()

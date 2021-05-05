@@ -1,6 +1,6 @@
 import { ValidationOptions, ValidationArguments } from "class-validator";
-import prisma from "src/prisma";
-import createValidator from "src/validation/create-validator";
+import prisma from "../prisma";
+import createValidator from "../validation/create-validator";
 
 const IsNotBlocked = createValidator<
   (validationOptions?: ValidationOptions) => never

@@ -1,4 +1,4 @@
 import { getApiRoutes } from "@egvelho/next-metadata";
-import endpoints from "src/endpoints";
+import endpoints from "./endpoints";
 
 export default getApiRoutes(endpoints);

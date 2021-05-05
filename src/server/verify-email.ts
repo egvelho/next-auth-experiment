@@ -1,10 +1,10 @@
-import parse from "src/validation/parse";
-import api from "src/api";
-import prisma from "src/prisma";
-import { Role } from "src/auth/types";
-import Token from "src/auth/token";
-import EmailToken from "src/email/email-token";
-import ValidEmailToken from "src/email/valid-email-token";
+import parse from "../validation/parse";
+import api from "../api";
+import prisma from "../prisma";
+import { Role } from "../auth/types";
+import Token from "../auth/token";
+import EmailToken from "../email/email-token";
+import ValidEmailToken from "../email/valid-email-token";
 
 export default api.verifyEmail(async (data) => {
   const [validMailToken, errors] = await parse(ValidEmailToken, data);

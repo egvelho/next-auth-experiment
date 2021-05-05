@@ -1,12 +1,15 @@
 {
-  "name": "next-account",
+  "name": "@egvelho/next-account",
   "version": "1.0.0",
-  "private": true,
+  "author": "egvelho",
+  "private": false,
   "scripts": {
     "dev": "next dev",
-    "start": "next start",
-    "build": "next build",
+    "build": "tsc --build tsconfig.build.json",
+    "clean": "rm -rf account auth email firebase server user validation view account-modal.* api-handler.* api.* client.* context.* endpoints.* prisma.*",
     "load-firebase": "load-firebase public",
+    "next-start": "next start",
+    "next-build": "next build",
     "prisma-generate": "prisma generate --schema schema.prisma",
     "prisma-push": "prisma db push --schema schema.prisma --preview-feature"
   },
@@ -14,7 +17,7 @@
     "@egvelho/next-firebase": "^1.3.1",
     "@egvelho/next-material-boilerplate": "^1.8.0",
     "@egvelho/next-material-components": "^1.13.0",
-    "@egvelho/next-metadata": "^1.5.0",
+    "@egvelho/next-metadata": "^1.5.1",
     "@egvelho/next-utils": "^1.5.0",
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.9.1",
@@ -26,11 +29,8 @@
     "next": "^10.0.6",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "react-infinite-scroll-component": "^6.0.0",
     "react-input-mask": "^2.0.4",
-    "react-masonry-css": "^1.0.14",
     "reflect-metadata": "^0.1.13",
-    "sitemap": "^6.4.0",
     "typeface-roboto": "0.0.75"
   },
   "devDependencies": {
@@ -38,6 +38,6 @@
     "@types/react": "^16.9.43",
     "@types/react-dom": "^16.9.8",
     "prisma": "^2.18.0",
-    "typescript": "^3.9.7"
+    "typescript": "^4.2.4"
   }
 }

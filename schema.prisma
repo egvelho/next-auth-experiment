@@ -13,8 +13,6 @@ model User {
   phoneNumber String @unique
   name String
   surname String
-  firebasePushId String?
-  isPremium Boolean @default(false)
   role String @default("user")
   isBlocked Boolean @default(false)
   isEmailVerified Boolean @default(false)

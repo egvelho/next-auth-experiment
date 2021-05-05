@@ -1,4 +1,4 @@
-export type Role = "user" | "premium-user" | "admin";
+export type Role = "user" | "admin";
 
 export interface Payload {
   id: number;

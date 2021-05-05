@@ -1,4 +1,5 @@
-import client from "src/client";
+import React from "react";
+import client from "../client";
 import * as types from "./types";
 import masks from "./masks";
 

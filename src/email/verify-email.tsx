@@ -1,12 +1,12 @@
-import { useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import { IsString } from "class-validator";
-import { Context, ContextProps } from "src/context";
-import useForm from "src/validation/use-form";
+import { Context, ContextProps } from "../context";
+import useForm from "../validation/use-form";
 import {
   VerifyEmail as MuiVerifyEmail,
   VerifyEmailProps as MuiVerifyEmailProps,
-} from "src/view/verify-email";
-import client from "src/client";
+} from "../view/verify-email";
+import client from "../client";
 
 const texts = {
   verifyEmailTitleText: "Verificar email",

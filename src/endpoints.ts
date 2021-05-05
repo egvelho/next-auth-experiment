@@ -1,18 +1,18 @@
 import { endpoint } from "@egvelho/next-metadata";
 import type { User } from "@prisma/client";
 import type { ValidationError } from "class-validator";
-import type ValidLogin from "src/auth/valid-login";
-import type ValidNewUser from "src/user/valid-new-user";
-import type ValidNewPhoneNumber from "src/user/valid-new-phone-number";
-import type ValidEmailVerification from "src/email/valid-email-verification";
-import type ValidEmailToken from "src/email/valid-email-token";
+import type ValidLogin from "./auth/valid-login";
+import type ValidNewUser from "./user/valid-new-user";
+import type ValidNewPhoneNumber from "./user/valid-new-phone-number";
+import type ValidEmailVerification from "./email/valid-email-verification";
+import type ValidEmailToken from "./email/valid-email-token";
 
-interface OperationResponse {
+export interface OperationResponse {
   errors: ValidationError[];
   success: boolean;
 }
 
-type TokenResponse = OperationResponse & {
+export type TokenResponse = OperationResponse & {
   token?: string;
 };
 

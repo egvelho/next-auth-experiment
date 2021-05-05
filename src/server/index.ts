@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import endpoints from "src/endpoints";
+import endpoints from "../endpoints";
 import createAccount from "./create-account";
 import emailVerificationCode from "./email-verification-code";
 import getUser from "./get-user";

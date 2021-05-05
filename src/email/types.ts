@@ -1,4 +1,4 @@
-import { Payload } from "src/auth/types";
+import { Payload } from "../auth/types";
 
 export interface EmailPayload extends Payload {
   code: string;

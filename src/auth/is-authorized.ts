@@ -1,7 +1,7 @@
 import { ValidationOptions, ValidationArguments } from "class-validator";
 import { Role } from "./types";
-import prisma from "src/prisma";
-import createValidator from "src/validation/create-validator";
+import prisma from "../prisma";
+import createValidator from "../validation/create-validator";
 
 const IsAuthorized = createValidator<
   (role: Role, validationOptions?: ValidationOptions) => never

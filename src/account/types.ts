@@ -1,7 +1,7 @@
 import type { UseFirebaseAuth } from "@egvelho/next-firebase/client";
-import type { UseForm } from "src/validation/use-form";
-import type { AccountProps as MuiAccountProps } from "src/view/account";
-import { ContextProps } from "src/context";
+import type { UseForm } from "../validation/use-form";
+import type { AccountProps as MuiAccountProps } from "../view/account";
+import { ContextProps } from "../context";
 import type ValidForm from "./valid-form";
 
 export type LoginProps = MuiAccountProps["loginProps"];

@@ -1,8 +1,8 @@
 import { IsOptional, IsPhoneNumber } from "class-validator";
 import { Whitelist } from "class-sanitizer";
-import IsPhoneNumberUnique from "src/user/is-phone-number-unique";
-import IsFirebaseToken from "src/firebase/is-firebase-token";
-import IsFirebasePhoneNumber from "src/firebase/is-firebase-phone-number";
+import IsPhoneNumberUnique from "../user/is-phone-number-unique";
+import IsFirebaseToken from "../firebase/is-firebase-token";
+import IsFirebasePhoneNumber from "../firebase/is-firebase-phone-number";
 
 const texts = {
   isFirebasePhoneNumberMessage:

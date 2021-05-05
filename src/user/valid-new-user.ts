@@ -1,9 +1,9 @@
 import { IsOptional } from "class-validator";
-import ValidUser from "src/user/valid-user";
-import IsEmailUnique from "src/user/is-email-unique";
-import IsPhoneNumberUnique from "src/user/is-phone-number-unique";
-import IsFirebaseToken from "src/firebase/is-firebase-token";
-import IsFirebasePhoneNumber from "src/firebase/is-firebase-phone-number";
+import ValidUser from "../user/valid-user";
+import IsEmailUnique from "../user/is-email-unique";
+import IsPhoneNumberUnique from "../user/is-phone-number-unique";
+import IsFirebaseToken from "../firebase/is-firebase-token";
+import IsFirebasePhoneNumber from "../firebase/is-firebase-phone-number";
 
 const texts = {
   isFirebasePhoneNumberMessage:

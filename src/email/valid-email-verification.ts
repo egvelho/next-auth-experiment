@@ -1,5 +1,5 @@
 import { IsEmail, IsString } from "class-validator";
-import IsEmailRegistered from "src/user/is-email-registered";
+import IsEmailRegistered from "../user/is-email-registered";
 
 const texts = {
   isEmailMessage: "Este email é inválido",

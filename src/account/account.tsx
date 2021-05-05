@@ -1,10 +1,10 @@
-import { useState, useContext, useLayoutEffect } from "react";
+import React, { useState, useContext, useLayoutEffect } from "react";
 import { useFirebaseAuth } from "@egvelho/next-firebase/client";
 import {
   Account as MuiAccount,
   AccountProps as MuiAccountProps,
-} from "src/view/account";
-import { Context, ContextProps } from "src/context";
+} from "../view/account";
+import { Context, ContextProps } from "../context";
 import * as types from "./types";
 import getLoginProps from "./get-login-props";
 import getRecoveryAccountProps from "./get-recovery-account-props";

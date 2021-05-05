@@ -1,9 +1,9 @@
-import parse from "src/validation/parse";
-import api from "src/api";
-import prisma from "src/prisma";
-import { Role } from "src/auth/types";
-import Token from "src/auth/token";
-import ValidLogin from "src/auth/valid-login";
+import parse from "../validation/parse";
+import api from "../api";
+import prisma from "../prisma";
+import { Role } from "../auth/types";
+import Token from "../auth/token";
+import ValidLogin from "../auth/valid-login";
 
 export default api.login(async (data) => {
   const [{ phoneNumber, firebaseToken }, errors] = await parse(

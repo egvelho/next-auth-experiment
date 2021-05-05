@@ -1,6 +1,6 @@
 import { getAxiosClient } from "@egvelho/next-metadata";
-import endpoints from "src/endpoints";
-import { getContext } from "src/context";
+import endpoints from "./endpoints";
+import { getContext } from "./context";
 
 const texts = {
   authErrorMessage: "Você não está autenticado. Por favor, entre na sua conta",

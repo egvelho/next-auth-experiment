@@ -1,6 +1,6 @@
 import { NextApiRequest } from "next";
 import { Jwt } from "@egvelho/next-utils/server";
-import prisma from "src/prisma";
+import prisma from "../prisma";
 import { Payload } from "./types";
 
 function encode(payload: Payload) {

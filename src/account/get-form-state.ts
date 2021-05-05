@@ -1,4 +1,4 @@
-import useForm from "src/validation/use-form";
+import useForm from "../validation/use-form";
 import ValidForm from "./valid-form";
 import * as types from "./types";
 

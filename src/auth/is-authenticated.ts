@@ -1,6 +1,6 @@
 import { ValidationOptions } from "class-validator";
 import Token from "./token";
-import createValidator from "src/validation/create-validator";
+import createValidator from "../validation/create-validator";
 
 const IsAuthenticated = createValidator<
   (validationOptions?: ValidationOptions) => never

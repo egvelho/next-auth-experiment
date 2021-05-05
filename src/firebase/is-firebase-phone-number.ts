@@ -3,7 +3,7 @@ import {
   ValidationArguments,
   isString,
 } from "class-validator";
-import createValidator from "src/validation/create-validator";
+import createValidator from "../validation/create-validator";
 import { FirebaseToken } from "@egvelho/next-firebase/server";
 
 const IsFirebasePhoneNumber = createValidator<

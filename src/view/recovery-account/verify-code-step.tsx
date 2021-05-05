@@ -33,7 +33,10 @@ export function VerifyCodeStep({
       <Box marginBottom={1}>
         <Typography>
           {verifyCodeStepInfoText}
-          <Link onClick={() => loading === false && onResendCode()}>
+          <Link
+            onClick={() => loading === false && onResendCode()}
+            style={{ cursor: "pointer" }}
+          >
             {resendCodeButtonLabel}
           </Link>
         </Typography>
