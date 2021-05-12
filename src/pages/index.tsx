@@ -54,7 +54,7 @@ export default function Index() {
         content={context.snackbarContent}
         setContent={(snackbarContent) => setContext({ snackbarContent })}
       />
-      <AccountModal />
+      <AccountModal context={context} setContext={setContext} />
     </div>
   );
 }

@@ -1,41 +1,31 @@
 import React from "react";
-import { useContext } from "react";
-import dynamic from "next/dynamic";
-import { WithToken } from "@egvelho/next-utils/client";
+import Account, { AccountProps } from "./account/account";
+import VerifyEmail from "./email/verify-email";
 import WithUser from "./user/with-user";
-import { Context } from "./context";
+import WithToken from "./auth/with-token";
 import client from "./client";
+import type { ContextProps } from "./context";
 
-const DynamicAccount = dynamic(() => import("./account/account"), {
-  ssr: false,
-});
-
-const DynamicVerifyEmail = dynamic(() => import("./email/verify-email"), {
-  ssr: false,
-});
-
-const DynamicWithFirebase = dynamic(
-  async () => (await import("@egvelho/next-firebase/client")).WithFirebase,
-  { ssr: false },
-);
-
-export function AccountModal() {
-  const { context, setContext } = useContext(Context);
+export function AccountModal<AccountContext extends ContextProps>({
+  context,
+  setContext,
+}: AccountProps<AccountContext>) {
   return (
     <>
       <WithToken
         token={context.token}
-        setToken={(token) => setContext({ token })}
+        setToken={(token) => setContext({ token } as Partial<AccountContext>)}
       />
       <WithUser
         user={context.user}
         token={context.token}
         getUser={async () => (await client.getUser({})).data.user}
-        setUser={async (user) => setContext({ user })}
+        setUser={async (user) =>
+          setContext({ user } as Partial<AccountContext>)
+        }
       />
-      <DynamicAccount />
-      <DynamicVerifyEmail />
-      <DynamicWithFirebase />
+      <Account context={context} setContext={setContext} />
+      <VerifyEmail />
     </>
   );
 }

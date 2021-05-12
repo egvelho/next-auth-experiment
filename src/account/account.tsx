@@ -1,30 +1,43 @@
-import React, { useState, useContext, useLayoutEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useFirebaseAuth } from "@egvelho/next-firebase/client";
 import {
   Account as MuiAccount,
   AccountProps as MuiAccountProps,
 } from "../view/account";
-import { Context, ContextProps } from "../context";
+import { ContextProps } from "../context";
 import * as types from "./types";
 import getLoginProps from "./get-login-props";
 import getRecoveryAccountProps from "./get-recovery-account-props";
 import getCreateAccountProps from "./get-create-account-props";
 import getFormState from "./get-form-state";
 
-export default function Account() {
+export interface AccountProps<AccountContext extends ContextProps> {
+  context: AccountContext;
+  setContext: (context: Partial<AccountContext>) => void;
+}
+
+export default function Account<AccountContext extends ContextProps>({
+  context,
+  setContext,
+}: AccountProps<AccountContext>) {
   const form = getFormState();
   const firebaseAuth = useFirebaseAuth();
-  const { context, setContext } = useContext(Context);
+
   const view = context.accountView;
   const setView = (accountView: MuiAccountProps["view"]) =>
-    setContext({ accountView });
+    setContext({ accountView } as Partial<AccountContext>);
+
   const [backButtonVisible, setBackButtonVisible] = useState(false);
+
   const loading = context.loading;
-  const setLoading = (loading: boolean) => setContext({ loading });
-  const setToken = (token: ContextProps["token"]) => setContext({ token });
+  const setLoading = (loading: boolean) =>
+    setContext({ loading } as Partial<AccountContext>);
+
+  const setToken = (token: ContextProps["token"]) =>
+    setContext({ token } as Partial<AccountContext>);
   const setSnackbarContent = (
     snackbarContent: ContextProps["snackbarContent"],
-  ) => setContext({ snackbarContent });
+  ) => setContext({ snackbarContent } as Partial<AccountContext>);
 
   const [loginStep, setLoginStep] = useState(
     "login" as types.LoginProps["step"],
@@ -96,7 +109,7 @@ export default function Account() {
     onBackButtonClick,
   };
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (view === undefined) {
       setLoginStep("login");
       setCreateAccountStep("personal-data");
@@ -105,13 +118,13 @@ export default function Account() {
     }
   }, [view]);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (createAccountStep === "personal-data") {
       form.setFormState({ code: "" });
     }
   }, [createAccountStep]);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (recoveryAccountStep === "email-code") {
       form.setFormState({ code: "" });
     } else if (recoveryAccountStep === "update-phone") {
@@ -119,7 +132,7 @@ export default function Account() {
     }
   }, [recoveryAccountStep]);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     setLoading(firebaseAuth.loading);
   }, [firebaseAuth.loading]);
 
