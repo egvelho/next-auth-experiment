@@ -21,7 +21,7 @@ export default {
     "PUT",
     "/api/account/create-account",
   ),
-  login: endpoint<ValidLogin, TokenResponse>("POST", "/api/login"),
+  login: endpoint<ValidLogin, TokenResponse>("POST", "/api/account/login"),
   emailVerificationCode: endpoint<ValidEmailVerification, TokenResponse>(
     "POST",
     "/api/account/email-verification-code",
@@ -34,5 +34,5 @@ export default {
     "PATCH",
     "/api/account/update-phone-number",
   ),
-  getUser: endpoint<{}, { user?: User }>("GET", "api/get-user"),
+  getUser: endpoint<{}, { user?: User }>("GET", "api/account/get-user"),
 };

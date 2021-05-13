@@ -1,6 +1,6 @@
 {
   "name": "@egvelho/next-account",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "desription": "Account management API and front-end for Next.js.",
   "main": "index.js",
   "author": "egvelho",
