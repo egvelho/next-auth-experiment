@@ -4,6 +4,10 @@ function storeUser<User>(user: User) {
   localStorage.setItem("user", JSON.stringify(user));
 }
 
+function removeUser() {
+  localStorage.removeItem("user");
+}
+
 function retrieveUser<User>(): User | undefined {
   const stringifiedUser = localStorage.getItem("user");
 
@@ -29,7 +33,10 @@ export default function WithUser<User>({
   setUser,
 }: WithUserProps<User>) {
   const syncUser = async () => {
-    if (token) {
+    if (token === "DELETE") {
+      removeUser();
+      setUser(undefined);
+    } else if (token) {
       const maybeUser = <User>retrieveUser();
       if (maybeUser === undefined) {
         const nextUser = await getUser();

@@ -8,7 +8,7 @@ export default function doLogout(
   setContext: (context: Partial<ContextProps>) => void,
 ) {
   setContext({
-    token: undefined,
+    token: "DELETE",
     snackbarContent: {
       message: texts.logoutSuccessMessage,
       severity: "success",

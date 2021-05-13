@@ -36,7 +36,7 @@ export default getAxiosClient({
     if (error?.response?.status === 401) {
       return setContext({
         loading: false,
-        token: undefined,
+        token: "DELETE",
         accountView: "login",
         snackbarContent: {
           message: texts.authErrorMessage,

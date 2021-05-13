@@ -50,7 +50,7 @@ export function Account(props: AccountProps) {
       scroll="body"
       PaperProps={{
         style: {
-          maxWidth: "calc(100% - 16px)",
+          maxWidth: "min(640px, calc(100% - 16px))",
           marginLeft: 8,
           marginRight: 8,
         },

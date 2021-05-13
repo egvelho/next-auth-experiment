@@ -119,6 +119,12 @@ export default function Account<AccountContext extends ContextProps>({
   }, [view]);
 
   useEffect(() => {
+    if (loginStep === "login") {
+      form.setFormState({ code: "" });
+    }
+  }, [loginStep]);
+
+  useEffect(() => {
     if (createAccountStep === "personal-data") {
       form.setFormState({ code: "" });
     }

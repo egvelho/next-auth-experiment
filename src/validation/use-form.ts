@@ -69,13 +69,18 @@ export default function useForm<T extends Object>(
 ): UseForm<T> {
   const [state, setState] = useState(initialState);
   const [form, setForm] = useState(getInitialForm(initialState));
+  const [resetFlag, setResetFlag] = useState(false);
 
   useEffect(() => {
     mapStateToForm(state, form, classConstructor).then(setForm);
   }, []);
 
   useEffect(() => {
-    mapStateToForm(state, form, classConstructor).then(setForm);
+    if (resetFlag === true) {
+      setResetFlag(false);
+    } else {
+      mapStateToForm(state, form, classConstructor).then(setForm);
+    }
   }, [state]);
 
   return {
@@ -102,6 +107,8 @@ export default function useForm<T extends Object>(
         [],
       );
 
+      setResetFlag(true);
+      setState(initialState);
       setForm(nextForm);
       return nextForm;
     },

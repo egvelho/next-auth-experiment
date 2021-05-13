@@ -8,15 +8,23 @@ export interface WithTokenProps {
 export default function WithToken({ token, setToken }: WithTokenProps) {
   useEffect(() => {
     const token = localStorage.getItem("token");
-    if (token === null || token === "") {
-      setToken(undefined);
-    } else {
-      setToken(token);
-    }
+    token && setToken(token);
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("token", token ?? "");
+    if (token === "DELETE") {
+      localStorage.removeItem("token");
+      setToken(undefined);
+    } else {
+      const storedToken = localStorage.getItem("token");
+      if (storedToken && (token === undefined || token === "")) {
+        setToken(storedToken);
+      }
+
+      if (token !== undefined && token !== "") {
+        localStorage.setItem("token", token);
+      }
+    }
   }, [token]);
 
   return null;
