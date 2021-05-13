@@ -34,5 +34,5 @@ export default {
     "PATCH",
     "/api/account/update-phone-number",
   ),
-  getUser: endpoint<{}, { user?: User }>("GET", "api/account/get-user"),
+  getUser: endpoint<{}, { user?: User }>("GET", "/api/account/get-user"),
 };
