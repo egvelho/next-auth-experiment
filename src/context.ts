@@ -6,6 +6,7 @@ import type { User } from "@prisma/client";
 import { createContext } from "@egvelho/next-material-boilerplate";
 
 export type ContextProps = {
+  drawerOpen: boolean;
   user: User | undefined;
   loading: boolean;
   token: string | undefined;
@@ -15,6 +16,7 @@ export type ContextProps = {
 };
 
 const initialContext: ContextProps = {
+  drawerOpen: false,
   user: undefined,
   loading: false,
   token: undefined,
