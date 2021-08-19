@@ -1,7 +1,7 @@
 {
-  "name": "@egvelho/next-auth-experiment",
+  "name": "next-auth-experiment",
   "version": "1.4.4",
-  "description": "Account management API and front-end for Next.js.",
+  "description": "Experimental boilerplate for auth with Next.JS. Featuring account creation, account recovery and login based on SMS verification via Firebase.",
   "main": "index.js",
   "author": "egvelho",
   "license": "GPL-3.0",
