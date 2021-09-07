@@ -1,4 +1,4 @@
-/node_modules
+node_modules
 /.env
 /.pnp
 .pnp.js
@@ -31,3 +31,4 @@ yarn-error.log*
 /context.*
 /endpoints.*
 /prisma.*
+/index.*
