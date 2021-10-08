@@ -1,2 +1,3 @@
-# next-auth-experiment
-Experimental boilerplate for auth with Next.JS. Featuring account creation, account recovery and login based on SMS verification via Firebase.
+# A Next.js and Firebase experimental workflow for auth and account setup/recovery
+
+Experimental boilerplate using Next.js, Typescript, Firebase and MUI. This boilerplate have account creation, account recovery and login/logout based on SMS verification via Firebase. Please, refer to this code just for learning purposes, as it is an experimental project.
